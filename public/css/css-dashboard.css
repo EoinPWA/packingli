@@ -1,0 +1,120 @@
+/* The title card css */
+
+/* The Main Title Card Container */
+.title-card {
+    /* KEY: This makes the card span the full width of the grid */
+    grid-column: 1 / -1;
+
+    /* Visual Styling */
+    background: linear-gradient(135deg, #003973 10%, #ffffff 100%); /* "Snow on the Horizon" Blue to White-Gold */
+    /* Alternative "Deep Winter" Gradient:
+       background: linear-gradient(to right, #243B55, #141E30);   E5E5BE
+    */
+
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Slightly deeper shadow than other cards */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Typography Styling */
+.title-text h1 {
+    margin: 10px 0;
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1;
+}
+
+.trip-tag {
+    background: rgba(255,255,255,0.2); /* Semi-transparent white */
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* The Icon on the right */
+.title-icon {
+
+}
+
+/* Mobile tweak: Stack them if the screen is tiny */
+@media (max-width: 600px) {
+    .title-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    .title-icon {
+
+    }
+}
+
+
+
+/* Content cards css */
+
+/* 1. Turn the container into a Grid */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    /* This automatically fits columns based on width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 2. Style the individual sections as Cards */
+.packing-section {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps image inside rounded corners */
+    display: flex;
+    flex-direction: column; /* Stacks image on top of text */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.packing-section:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* 3. Control the Image */
+.packing-image img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crops image nicely to fill the box */
+    display: block;
+}
+
+/* 4. Style the Content */
+.packing-content {
+    padding: 20px;
+}
+
+.packing-content h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db; /* Alpine blue accent */
+    padding-bottom: 10px;
+    display: inline-block;
+}

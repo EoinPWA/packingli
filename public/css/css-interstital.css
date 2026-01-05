@@ -1,0 +1,113 @@
+/* Container for the button groups */
+.activity-group {
+    background-color: #eefbf9; /* A very light version of your teal */
+    padding: 2rem;
+    border-radius: 12px;
+    height: 100%; /* Ensures columns match height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* The Buttons themselves */
+.activity-btn {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 15px;
+
+    /* Typography */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+
+    /* Color & Border */
+    background-color: #ffffff;
+    color: #a4243b; /* Your Brand Red */
+    border: 2px solid #a4243b;
+    border-radius: 6px;
+
+    /* Animation */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.activity-btn:hover {
+    background-color: #a4243b;
+    color: #ffffff;
+    transform: translateY(-3px); /* Lifts up slightly */
+    box-shadow: 0 5px 15px rgba(164, 36, 59, 0.2);
+}
+
+/* Remove margin from the last button in a group */
+.activity-btn:last-child {
+    margin-bottom: 0;
+}
+
+/* Style for the Adventure Image container */
+.adventure-img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.adventure-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.adventure-img-container:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.adventure-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    margin: 0;
+    background: rgba(164, 36, 59, 0.9); /* Brand Red with transparency */
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+2. The HTML
+Replace the entire <div class="row" style="margin-top:4%"> block at the bottom of your page with this cleaner version. I have removed the "Spacer" headers and the messy inline styling.
+
+HTML
+
+<div class="row" style="margin-top:4%">
+
+    <div class="one-third column">
+        <a href="content-template.html" style="text-decoration:none;">
+            <div class="adventure-img-container">
+                <img src="images/mtn.jpg" alt="Adventure">
+                <h3 class="adventure-title">Adventure</h3>
+            </div>
+        </a>
+    </div>
+
+    <div class="one-third column">
+        <div class="activity-group">
+            <a href="content-SUP-packed-list.html" class="activity-btn">SUP</a>
+            <a href="content-sailing-packed-list.html" class="activity-btn">Dinghy</a>
+        </div>
+    </div>
+
+    <div class="one-third column">
+        <div class="activity-group">
+            <a href="content-our-beach-holiday.html" class="activity-btn">Beach</a>
+            <a href="content-skiing2.html" class="activity-btn">Skiing</a>
+        </div>
+    </div>
+
+</div>

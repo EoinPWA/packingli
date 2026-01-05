@@ -1,0 +1,28 @@
+/* =========================================
+   6. BUTTON STYLES
+   ========================================= */
+.download-btn {
+    display: inline-block;       /* Allows padding/margin on links */
+    margin-top: auto;            /* Pushes button to bottom if we use flex column */
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;       /* Removes the underline */
+    font-weight: 600;
+    border-radius: 4px;          /* Slight rounded corners */
+    transition: opacity 0.2s ease;
+    text-align: center;
+
+    /* Mobile Touch Target Safety */
+    min-width: 150px;
+}
+
+.download-btn:hover {
+    opacity: 0.9;                /* Slight fade effect on hover */
+}
+
+/* Update .packing-content to ensure button spacing is consistent */
+.packing-content {
+    /* (Existing styles...) */
+    gap: 1.5rem;                 /* Adds consistent space between title, text, list, and button */
+}

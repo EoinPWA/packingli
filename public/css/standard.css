@@ -1,0 +1,198 @@
+ /*
+    Key Breakpoints to Consider
+    320px: Smallest common mobile view.
+    375px / 390px: Modern smartphone widths (iPhone X/11, Android).
+    576px: Often used as the start of the "Small" (sm) breakpoint (e.g., landscape phones/small tablets).
+    768px: A classic tablet portrait breakpoint, also often the start of "Medium" (md).
+    992px: A common transition for larger tablets/small desktops (e.g., "Large" (lg)).
+    1200px: Standard for desktop monitors (e.g., "Extra Large" (xl)).
+    1440px+: For very large or ultrawide screens.
+    */
+
+        /*  =========================================
+           1. CONFIGURATION (Edit these values)
+           ========================================= */
+        :root {
+            /* DESKTOP: Width of the image column (e.g., 50%, 40%, 600px) */
+            --desktop-img-width: 50%;
+
+            /* DESKTOP: Minimum height to prevent thin slivers if text is too short */
+            --desktop-min-height: 400px;
+
+            /* MOBILE: Fixed height for the image header */
+            --mobile-img-height: 250px;
+
+            /* COLORS & FONTS */
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --accent-color: #2c3e50;
+            --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* =========================================
+           2. GLOBAL RESET & TYPOGRAPHY
+           ========================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        h1 {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style-type: none; /* Custom styling can be added here */
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.15rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: ""; /* Custom bullet */
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* =========================================
+           3. PACKING SECTION LAYOUT
+           ========================================= */
+
+        /* The Wrapper for each list item */
+        .packing-section {
+            display: flex;
+            width: 100%;
+            background: white;
+            margin-bottom: 0; /* Continuous look, add margin if you want gaps */
+
+            /* CRITICAL: Ensures the image stretches to match text height */
+            align-items: stretch;
+        }
+
+        /* The Image Container */
+        .packing-image {
+            /* Fix the width, do not grow or shrink */
+            flex: 0 0 var(--desktop-img-width);
+            position: relative;
+            overflow: hidden;
+
+            /* Mitigation for "short text" issue */
+            min-height: var(--desktop-min-height);
+        }
+
+        /* The Actual Image */
+        .packing-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+
+            /* CRITICAL: crops the image to fill the box without distortion */
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* The Text Container */
+        .packing-content {
+            flex: 1; /* Take up remaining space */
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers text vertically */
+        }
+
+        /* =========================================
+           4. ZIG-ZAG LOGIC (Desktop Only)
+           ========================================= */
+
+        /* Select every EVEN section (2, 4, 6...) and reverse the row */
+        .packing-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* =========================================
+           5. MOBILE LAYOUT (< 768px)
+           ========================================= */
+        @media (max-width: 768px) {
+            .packing-section,
+            .packing-section:nth-child(even) {
+                /* Stack them vertically */
+                flex-direction: column;
+            }
+
+            .packing-image {
+                width: 100%;
+                flex: none; /* Reset the flex sizing */
+
+                /* Apply the manual mobile height adjustment */
+                height: var(--mobile-img-height);
+                min-height: 0; /* Override desktop min-height */
+            }
+
+            .packing-content {
+                padding: 2rem 1.5rem;
+                width: 100%;
+            }
+}
+
+/* =========================================
+   PAGE MARGINS (Using a Container)
+   ========================================= */
+
+/* 1. Reset Body to avoid conflicts */
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents accidental side scrolling */
+}
+
+/* 2. The Wrapper handles the margins */
+.page-container {
+    /* Desktop Default: 15% Margin on both sides */
+    margin-left: 15%;
+    margin-right: 15%;
+
+    /* Ensures the container calculates width correctly */
+    width: auto;
+    max-width: 100%;
+}
+
+/* 3. TABLET OVERRIDE (< 1024px) */
+@media (max-width: 1024px) {
+    .page-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* 4. MOBILE OVERRIDE (< 768px) */
+@media (max-width: 768px) {
+    .page-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+        }
+

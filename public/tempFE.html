@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset basic margins for the demo */
+        body, h1, p {
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+        }
+
+        /* The Container with the Effect */
+        .hero-section {
+          /* 1. Define size */
+          height: 100vh; /* Full viewport height */
+          width: 100%;
+
+          /* 2. The Magic: Multiple Backgrounds */
+          background:
+            /* Top Layer: Gradient from Transparent (left) to Solid #E5E5BE (right) */
+            linear-gradient(to right, transparent 0%, #E5E5BE 85%),
+
+            /* Bottom Layer: The Snow Photograph */
+            url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=2000&auto=format&fit=crop') no-repeat center left;
+
+          /* Ensure the image covers the area */
+          background-size: cover;
+
+          /* Flexbox to position the text content */
+          display: flex;
+          align-items: center; /* Vertically center */
+          justify-content: flex-end; /* Push text to the right side */
+        }
+
+        /* Styling the Content Box */
+        .content-box {
+          width: 40%;        /* Occupy the right side of the screen */
+          margin-right: 10%; /* Add spacing from the right edge */
+          color: #003973;    /* Dark blue text for contrast against #E5E5BE */
+          padding: 2rem;
+        }
+
+        .content-box h1 {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          /* Optional: Slight text shadow if the gradient isn't fully opaque */
+          text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        .content-box p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+        }
+
+        /* Mobile Adjustment */
+        @media (max-width: 768px) {
+          .hero-section {
+            /* On mobile, change gradient to vertical (top to bottom) so text sits under the image */
+            background:
+              linear-gradient(to bottom, transparent 0%, #E5E5BE 70%),
+              url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=2000&auto=format&fit=crop') no-repeat center top;
+            background-size: cover;
+            justify-content: center;
+            align-items: flex-end; /* Push text to bottom */
+          }
+          .content-box {
+            width: 90%;
+            margin: 0 0 2rem 0;
+            text-align: center;
+          }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero-section">
+    <div class="content-box">
+        <h1>Winter Clarity.</h1>
+        <p>
+            This demonstrates the transition from a detailed photograph on the left
+            to a solid flat colour on the right, allowing for easy-to-read text
+            and a clean design aesthetic.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

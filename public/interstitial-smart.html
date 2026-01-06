@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from packingli.com/interstitial-smart.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jul 2024 08:46:03 GMT -->
+<!-- Mirrored from packingli.com/interstitial-adventure.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jul 2024 08:46:01 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 
@@ -24,6 +24,7 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.html">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/css-interstital.css">
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -39,58 +40,166 @@
 <body>
 <main>
 
-<div class="container">
-    <div class="row" style="margin-top: 2%">
+    <div class="container">
+        <div class="row" style="margin-top: 2%">
 
-        <div class="one-half column"  id="img-logo;">
-            <img src="images/sun-white-background.png" style="height:15em; width:15em;" id="img-logo">
-
-        </div>
-
-        <div class="one-half column" >
-
-            <h1 style="color: #a4243b" id="title-text">Packed Lists</h1>
-            <p style="color: #a4243b">You're not packed already? Make it easy.  Here is what you need</a>.</p>
+            <div class="container" id="indexContainer" style="max-width:1200px">
 
 
 
-        </div>
-    </div>
+                <!--  The Landscape Tablet + desktop  version of banner ________________________________________________________________________ -->
 
-    <div class="row" style="margin-top:4%">
-        <div class="one-third column">
-            <a href="content-template.html" style="text-decoration:none; color:#FE6107">
-            <h3>Adventure</h3>
-                <img src="images/smart.html" style="width:100%; padding-right:1em;margin-right:1em;">
-                    </a>
-        </div>
 
-        <div class="one-third column">
-            <h3 style="color:white;">Spacer</h3>
-            <div style="width:100%; height: 100%; display: flex; justify-content: flex-end; background-color: #A8F3EC">
-                <div style="width:100%; display: block; text-align:right;">
-                    <a href="content-conference.html"><button style="background-color:white; margin:1em; width:50%">Conference</button></a>
-                    <br>
-                    <a href="content-sailing-packed-list.html"><button style="background-color:white; margin:1em; width:50%">Interview</button></a>
-                    <br>
-                </div>
+                <div id="banner-landscape-frame" style="margin-top: 3%; margin-bottom: 2%  padding: 20px;">
+                    <div class="row" >
+
+
+
+                        <div class="one-half column" id="img-logo;" style="display: block; ">
+                            <img src="images/sun-white-background.png" style="display: block; height:15em; width:15em;"
+                                 id="img-logo-landscape">
+                        </div>   <!--  /the first one-half column containing the sun img -->
+
+
+
+                        <div class="one-half column" id="banner-text-landscape" onMouseOver="show_blog()"
+                             ontouchstart="show_blog_touch"
+                             onMouseOut="hide_blog()" ontouchend="hide_blog_touch">
+
+                            <div id="title" style="display: inline-block;">
+                                <h1 style="color: #a4243b; display: inline; margin-right: 0.75em; "
+                                    id="title-text-landscape">
+                                    Packingli
+                                </h1>
+                            </div>
+                            <br>
+
+
+                            <div style=" text-decoration: none !important;">
+                                <h5 class="apropos" id="apropos"
+                                    style="color: #a4243b; display: block; padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                    Not packed already? </h5>
+
+                                <div class="blog" id="blog" style="display:none; margin-top: 0.8em; ">
+                                    <a href="https://example.com/"
+                                       style="text-decoration: none !important; display: inline; ">
+                                        <h5 class="hook-text-landscapeX"
+                                            style="color: white;  text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                            Blog </h5></a>
+                                    <a href="https://example.com/" style="text-decoration: none !important; display: inline">
+                                        <h5 class="hook-text-landscapeX"
+                                            style="color: white;  text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                            About </h5></a>
+                                    <a href="https://example.com/" style="text-decoration: none !important; display: inline">
+                                        <h5 class="hook-text-landscapeX"
+                                            style="color: white;  text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                            Contact </h5></a>
+
+                                </div>
+
+
+                                <h5 id="hook-text-landscape2"
+                                    style="color: #a4243b; display: block; padding-top: 0px !important; margin-top:0px !important ">
+                                    Here's what you need.
+                                    Easy!</h5>
+                            </div>
+
+
+                        </div>  <!--  /the other one-half column containing text -->
+                    </div><!--  /row   -->
+                </div>  <!-- /banner-landscape-frame  -->
+
+
+            </div>  <!-- /container -->
+
+            <!--  Closing the Landscape Tablet + desktop  version of banner ______________________________________________________________ -->
+
+            <!--  The portrait (mobile) version of banner _________________________________________________________  background-image: radial-gradient(cyan 0%, transparent 20%, salmon 40%);_______________________ -->
+
+
+            <div id="banner-portrait-frame" style=" max-width: 100%; width: 550px; margin-top: 4%; margin-bottom: 2%">
+
+                <table id="hidden-table" style="table-layout: fixed; max-width: 100%; margin: auto; width: 550px; background-color: #a4243b; background-image: radial-gradient(#3bb06f 0%, #ffffff 82%); display: none; margin-top: 0px; margin-bottom:0px;  width:100%; box-shadow: none; border: none;" >
+                    <tr style="width:100%;">
+                        <td class="headerTableCell">  <a href="https://example.com/"  style=" text-decoration: none !important; color: white; ">
+                            <h5 class="hook-text-landscapeX"
+                                style=" text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important; ">
+                                About </h5></a></td>
+                        <td class="headerTableCell">   <a href="https://example.com/" style="text-decoration: none !important; color: white; ">
+                            <h5 class="hook-text-landscapeX"
+                                style=" text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                Contact </h5></a></td>
+                        <td class="headerTableCell">     <a href="https://example.com/" style=" text-decoration: none !important; color: white; ">
+                            <h5 class="hook-text-landscapeX"
+                                style=" text-decoration: none;  padding-bottom: 0px !important; margin-bottom:0px !important ">
+                                Blog</h5></a></td>
+                    </tr>
+                </table>
+
+                <table id="banner-table"  style="position; fixed; margin-left: 0%; margin-right: 0%; box-shadow: none; border: none; margin-top: 0px; margin-bottom:0px; padding-top: 0px; padding-bottom:0px; display: block; "   >
+                    <tr style="display: block; box-shadow: none; border: none; margin-top: 0px;  margin-bottom:0px; padding-top: 0px; padding-bottom:0px; ">
+                        <td style="width: 13em; background-color: #fff; box-shadow: none; border: none;"><h1 style="color: #a4243b; font-size: 3em; " id="title-text-portrait">
+                            Packingli</h1></td>
+                        <td style="background-color: #fff; "> <img style="height:3em; width: 3em; text-align: left;" src="images/sun-white-background.png"></td>
+                        <td style="width: 13em; max-width; 500px; background-color:  #fff;  text-align: right; box-shadow: none; border: none;"><img onclick="hiddenDivFunction()" style="height:3em; width: 3em; padding-top: 0.5em; text-align: right; " src="images/menu-icon.png"></td>
+
+                    </tr>
+                </table>
+
+                <br>
+
+                <h5 style="color: #a4243b; display: block; padding-bottom: 1em; width: 90%;  margin: auto; margin-top:0px; padding-top:0px; ">Not packed already? <br>Here's what you
+                    need. Easy!</h5>
+
+
+            </div>  <!--  /banner-portrait-frame   -->
+
+
+            <!--  Closing the portrait (mobile) version of banner ______________________________________________________________ -->
+
+
+
+
+        <div class="row" style="margin-top:4%">
+
+            <div class="one-third column">
+                <a href="content-template.html" style="text-decoration:none;">
+                    <div class="adventure-img-container">
+                        <img src="images/smart-with-sky.png" alt="Smart">
+
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="one-third column">
+                <div class="activity-group">
+                    <a href="content-conference.html"  class="activity-btn">Conference</a>
+                    <a href="content-interview.html"  class="activity-btn">Interview</a>
+
             </div>
         </div>
 
         <div class="one-third column">
-            <h3 style="color:white; ">spacer</h3>
+            <h3 style="color:white; "> </h3>
+
+            <!--
+
             <div style="width:100%; height: 100%; display: flex; justify-content: flex-end; background-color: #A8F3EC">
                 <div style="width:100%; display: block; text-align:right;">
-                    <a href="content-our-beach-holiday.html"><button style="background-color:white; margin:1em; width:50%">Etc</button></a>
+                    <a href="content-our-beach-holiday.html"><button style="background-color:white; margin:1em; width:50%"> </button></a>
                 <br>
                 <button style="background-color:white; margin:1em; width:50%">Demo1</button>
                 <br>
+
+
                     </div>
             </div>
-
+  -->
         </div>
 
-
+    </div>
 
 </div>
 
